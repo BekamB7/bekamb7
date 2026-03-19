@@ -15,7 +15,8 @@
 
 - 📫 How to reach me **Bebabekam@gmail.com , telegram @chartedadam**
 
-- 📄 Know about my experiences [https://bekamb7.github.io/bekamb7/](https://bekamb7.github.io/bekamb7/)
+- 📄 Know about my experiences [https://bekamb7.github.io/bekamb7/](https://bekamb7.github.io/bekamb0
+- /)
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
