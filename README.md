@@ -1,5 +1,5 @@
 <h1 align="center"> Hey, I'm Bekam Berhanu</h1>
-<h3 align="center">A devoted frontend developer from Ethiopia , Addis Abeba</h3>
+<h3 align="center">A  frontend developer from Ethiopia , Addis Abeba</h3>
 <img align="right" alt="coding" width="400" src="https://cdn.dribbble.com/userupload/21436944/file/original-3212fe7a869a76063e59d76c39176c45.gif">
 
 
