@@ -7,7 +7,7 @@ Frontend Developer • Future Full-Stack Engineer • AI Enthusiast
 </h3>
 
 <p align="center">
-Building modern web applications, learning backend development, and integrating AI into real-world products.
+Building modern web applications, learning backend development, and  AI into real-world products.
 </p>
 
 <img align="right" alt="Coding" width="400" src="https://cdn.dribbble.com/userupload/21436944/file/original-3212fe7a869a76063e59d76c39176c45.gif">
@@ -17,12 +17,12 @@ Building modern web applications, learning backend development, and integrating 
 ## 🚀 About Me
 
 - 💻 Frontend Developer from **Addis Ababa, Ethiopia**
-- 🌱 Currently learning **Backend Development, Flutter, Python, AI Integration & System Design**
+- 🌱 Currently learning **Backend Development, Flutter, AI Integration & System Design**
 - 🔭 Working on **modern web applications and digital products**
 - 🤖 Exploring **AI-powered applications, automation, and LLM integrations**
 - 👯 Open to collaborating on **Web Development, SaaS Projects, and AI Solutions**
 - 🎯 Goal: Become a highly skilled **Full-Stack Developer & AI Engineer**
-- ⚡ Fun Fact: I enjoy turning ideas into real products that solve problems.
+- ⚡ hobby: synthesize ideas with Intelligence machine for better knowleadge .
 
 ---
 
@@ -100,7 +100,7 @@ Bebabekam@gmail.com
 ### Mobile
 
 <p>
-<img src="https://skillicons.dev/icons?i=flutter,react" />
+<img src="https://skillicons.dev/icons?i=flutter" />
 </p>
 
 ### Programming Languages
