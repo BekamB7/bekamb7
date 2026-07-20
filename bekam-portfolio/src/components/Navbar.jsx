@@ -27,39 +27,37 @@ export default function Navbar() {
     <motion.nav
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "py-3" : "py-5"
+        scrolled ? "py-3" : "py-6"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6">
         <div
           className={`
-            relative rounded-2xl transition-all duration-500
+            relative rounded-full transition-all duration-500
             ${scrolled 
-              ? "bg-black/80 backdrop-blur-2xl border border-white/10 shadow-2xl" 
-              : "bg-transparent"
+              ? "bg-black/60 backdrop-blur-xxl border border-white/10 shadow-xl" 
+              : "bg-transparent border-transparent"
             }
           `}
         >
-          <div className="px-6 py-3 flex items-center justify-between">
-            {/* No Logo - Just Navigation Links */}
-
-            {/* Desktop Links */}
-            <div className="hidden md:flex items-center gap-8 mx-auto">
+          <div className="px-8 py-3 flex items-center justify-between">
+            {/* Desktop Links - Centered with flex-1 and justify-center */}
+            <div className="hidden md:flex items-center justify-center flex-1 gap-8">
               {links.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="relative text-sm text-muted hover:text-white transition-colors duration-300"
+                  className="relative text-sm font-medium text-muted hover:text-white transition-colors duration-300 group"
                 >
                   {link.name}
-                  <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-300 group-hover:w-full" />
+                  <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-300 group-hover:w-full" />
                 </a>
               ))}
             </div>
 
-            {/* Mobile Menu Toggle */}
+            {/* Mobile Toggle - Only visible on mobile, pushed to right */}
             <button
               onClick={() => setOpen(!open)}
               className="md:hidden relative w-9 h-9 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-white hover:border-white/20 transition-colors ml-auto"
@@ -72,16 +70,16 @@ export default function Navbar() {
           <motion.div
             initial={false}
             animate={open ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.3 }}
             className="overflow-hidden md:hidden"
           >
-            <div className="px-6 pb-6 space-y-4">
+            <div className="px-8 pb-6 space-y-4">
               {links.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="block text-base text-muted hover:text-white transition-colors duration-300"
+                  className="block text-base font-medium text-muted hover:text-white transition-colors"
                 >
                   {link.name}
                 </a>

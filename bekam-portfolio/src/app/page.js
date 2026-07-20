@@ -8,6 +8,7 @@ import Experience from "@/components/Experience";
 import Credentials from "@/components/Credentials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import ScrollTracker from "@/components/ScrollTracker";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <Credentials />
       <Contact />
       <Footer />
+      <ScrollTracker />
     </main>
   );
 }
