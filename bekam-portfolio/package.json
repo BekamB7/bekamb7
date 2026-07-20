@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",
-    "@fontsource/plus-jakarta-sans": "^5.3.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.42.2",
@@ -18,6 +17,7 @@
     "next": "16.2.10",
     "react": "19.2.4",
     "react-dom": "19.2.4",
+    "react-typed": "^2.0.12",
     "shadcn": "^4.13.1",
     "tailwind-merge": "^3.6.0",
     "tw-animate-css": "^1.4.0"
