@@ -1,53 +1,125 @@
 @import "tailwindcss";
+@import "@fontsource/plus-jakarta-sans/300.css";
+@import "@fontsource/plus-jakarta-sans/400.css";
+@import "@fontsource/plus-jakarta-sans/500.css";
+@import "@fontsource/plus-jakarta-sans/600.css";
+@import "@fontsource/plus-jakarta-sans/700.css";
+@import "@fontsource/plus-jakarta-sans/800.css";
 
 @theme {
-  --color-background: #050b18;
-  --color-foreground: #e2e8f0;
-  --color-card: #070e20;
-  --color-card-foreground: #e2e8f0;
-  --color-primary: #3b82f6;
-  --color-primary-foreground: #050b18;
-  --color-secondary: #1e293b;
-  --color-secondary-foreground: #e2e8f0;
-  --color-muted: #1e293b;
-  --color-muted-foreground: #94a3b8;
-  --color-accent: #3b82f6;
-  --color-accent-foreground: #e2e8f0;
-  --color-destructive: #ef4444;
-  --color-destructive-foreground: #e2e8f0;
-  --color-border: #1e293b;
-  --color-input: #1e293b;
-  --color-ring: #3b82f6;
-  --radius: 0.75rem;
+  --color-pitch-black: #000000;
+  --color-dark-void: #020202;
+  --color-charcoal: #0a0a0a;
+  --color-deep-navy: #0a1628;
+  --color-navy: #0f1d3a;
+  --color-navy-light: #162a52;
+  --color-cream: #f5f0e8;
+  --color-cream-dark: #e8e0d5;
+  --color-cream-muted: #bfb8ae;
+  --color-accent-blue: #3b82f6;
+  --color-accent-blue-light: #60a5fa;
+  --color-accent-blue-dark: #1d4ed8;
+  --color-gold: #c9a84c;
+  --color-gold-light: #e4c76b;
+  --color-border-subtle: rgba(255, 255, 255, 0.06);
+  --color-border-medium: rgba(255, 255, 255, 0.1);
+  --color-glass: rgba(255, 255, 255, 0.02);
+  --color-glass-hover: rgba(255, 255, 255, 0.04);
 }
 
 * {
-  border-color: var(--color-border);
+  border-color: var(--color-border-subtle);
 }
 
 body {
-  background-color: var(--color-background);
-  color: var(--color-foreground);
-  font-family: system-ui, -apple-system, sans-serif;
+  background-color: var(--color-pitch-black);
+  color: var(--color-cream);
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 4px;
 }
-
 ::-webkit-scrollbar-track {
-  background: #050b18;
+  background: var(--color-pitch-black);
 }
-
 ::-webkit-scrollbar-thumb {
-  background: #1e3a5f;
-  border-radius: 3px;
+  background: rgba(59, 130, 246, 0.3);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.5);
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #2563eb;
+/* Selection */
+::selection {
+  background: rgba(59, 130, 246, 0.3);
+  color: var(--color-cream);
+}
+
+/* Glass effect utility */
+.glass {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-hover:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Gradient text utility */
+.text-gradient {
+  background: linear-gradient(135deg, #f5f0e8 0%, #60a5fa 50%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-blue {
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 50%, #1d4ed8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #e4c76b 0%, #c9a84c 50%, #a68a2e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Grid background pattern */
+.bg-grid {
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+/* Noise overlay */
+.bg-noise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.015;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* Line clamp */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

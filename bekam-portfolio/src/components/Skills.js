@@ -1,44 +1,56 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
+import {
+  Code2,
+  Server,
+  Smartphone,
+  Brain,
+  GitBranch,
+  Cloud,
+  Layers,
+  Cpu,
+} from "lucide-react";
 
-const skillCategories = [
+const skillGroups = [
   {
-    title: "Frontend",
-    skills: [
-      { name: "React", level: 90 },
-      { name: "Next.js", level: 85 },
-      { name: "JavaScript", level: 88 },
-      { name: "Tailwind CSS", level: 92 },
+    category: "Frontend",
+    icon: Code2,
+    items: [
+      { name: "React", level: 92 },
+      { name: "Next.js", level: 88 },
+      { name: "JavaScript", level: 90 },
+      { name: "Tailwind CSS", level: 95 },
     ],
   },
   {
-    title: "Backend",
-    skills: [
-      { name: "Node.js", level: 82 },
-      { name: "Express", level: 80 },
-      { name: "Python FastAPI", level: 75 },
-      { name: "MySQL", level: 78 },
+    category: "Backend",
+    icon: Server,
+    items: [
+      { name: "Node.js", level: 85 },
+      { name: "Express", level: 82 },
+      { name: "Python FastAPI", level: 78 },
+      { name: "MySQL", level: 80 },
     ],
   },
   {
-    title: "Mobile & AI",
-    skills: [
-      { name: "Flutter", level: 70 },
-      { name: "OpenAI API", level: 75 },
-      { name: "System Design", level: 65 },
-      { name: "Git & Vercel", level: 85 },
+    category: "Mobile",
+    icon: Smartphone,
+    items: [
+      { name: "Flutter", level: 72 },
+      { name: "Dart", level: 70 },
+      { name: "REST APIs", level: 85 },
+      { name: "Firebase", level: 65 },
     ],
   },
   {
-    title: "Currently Learning",
-    skills: [
-      { name: "Advanced Backend", level: 50 },
-      { name: "Flutter Advanced", level: 45 },
-      { name: "AI & LLMs", level: 55 },
-      { name: "System Architecture", level: 40 },
+    category: "AI & Tools",
+    icon: Brain,
+    items: [
+      { name: "OpenAI API", level: 78 },
+      { name: "System Design", level: 68 },
+      { name: "Git & Vercel", level: 88 },
+      { name: "Prompt Engineering", level: 75 },
     ],
   },
 ];
@@ -49,24 +61,26 @@ function SkillBar({ name, level, index }) {
       initial={{ opacity: 0, x: -20 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: index * 0.1, duration: 0.4 }}
-      className="mb-4"
+      transition={{ delay: index * 0.1, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+      className="group"
     >
-      <div className="flex justify-between mb-1.5">
-        <span className="text-sm text-gray-300">{name}</span>
-        <span className="text-sm text-gray-500">{level}%</span>
+      <div className="flex justify-between items-center mb-2">
+        <span className="text-sm text-cream-muted group-hover:text-cream transition-colors">
+          {name}
+        </span>
+        <span className="text-xs text-cream-muted/50">{level}%</span>
       </div>
-      <div className="h-2 bg-blue-950/30 rounded-full overflow-hidden">
+      <div className="h-1.5 rounded-full bg-white/[0.03] overflow-hidden">
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: `${level}%` }}
           viewport={{ once: true }}
           transition={{
-            delay: 0.5 + index * 0.1,
+            delay: 0.3 + index * 0.1,
             duration: 1,
-            ease: "easeOut",
+            ease: [0.22, 1, 0.36, 1],
           }}
-          className="h-full bg-gradient-to-r from-blue-600 to-blue-400 rounded-full"
+          className="h-full rounded-full bg-gradient-to-r from-accent-blue to-accent-blue-light"
         />
       </div>
     </motion.div>
@@ -75,48 +89,46 @@ function SkillBar({ name, level, index }) {
 
 export default function Skills() {
   return (
-    <section id="skills" className="relative py-24 lg:py-32">
-      <div className="container mx-auto px-4">
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <Badge variant="secondary" className="mb-4 px-4 py-1.5 text-sm">
-            Skills
-          </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Technologies I{" "}
-            <span className="bg-gradient-to-r from-blue-400 to-blue-300 bg-clip-text text-transparent">
-              Work With
+    <section id="skills" className="relative py-32 bg-pitch-black">
+      <div className="container mx-auto px-6">
+        <div className="max-w-6xl mx-auto">
+          {/* Section Label */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex items-center gap-3 mb-16"
+          >
+            <span className="text-xs tracking-[0.3em] uppercase text-accent-blue font-semibold">
+              Skills
             </span>
-          </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-            A growing toolkit of modern technologies for building complete
-            digital solutions.
-          </p>
-        </motion.div>
+            <div className="h-px flex-1 bg-white/[0.06]" />
+          </motion.div>
 
-        {/* Skills Grid */}
-        <div className="grid md:grid-cols-2 gap-6">
-          {skillCategories.map((category, catIndex) => (
-            <motion.div
-              key={catIndex}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: catIndex * 0.15, duration: 0.5 }}
-            >
-              <Card className="border-blue-500/10 bg-blue-950/10 backdrop-blur-sm h-full">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-bold text-white mb-6 flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-blue-500" />
-                    {category.title}
+          <div className="grid md:grid-cols-2 gap-8">
+            {skillGroups.map((group, groupIndex) => (
+              <motion.div
+                key={groupIndex}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  delay: groupIndex * 0.15,
+                  duration: 0.6,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="p-8 rounded-3xl border border-white/[0.04] bg-white/[0.01] hover:border-white/[0.08] transition-all duration-500"
+              >
+                <div className="flex items-center gap-3 mb-8">
+                  <div className="w-10 h-10 rounded-xl bg-accent-blue/10 flex items-center justify-center">
+                    <group.icon className="w-5 h-5 text-accent-blue" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-cream">
+                    {group.category}
                   </h3>
-                  {category.skills.map((skill, i) => (
+                </div>
+                <div className="space-y-5">
+                  {group.items.map((skill, i) => (
                     <SkillBar
                       key={i}
                       name={skill.name}
@@ -124,10 +136,10 @@ export default function Skills() {
                       index={i}
                     />
                   ))}
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

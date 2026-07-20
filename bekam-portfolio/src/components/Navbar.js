@@ -2,127 +2,87 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Download } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Download } from "lucide-react";
 
 const navLinks = [
-  { name: "Home", href: "#home" },
+  { name: "Work", href: "#work" },
   { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
-  { name: "Projects", href: "#projects" },
+  { name: "Credentials", href: "#credentials" },
   { name: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      setScrolled(window.scrollY > 30);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const scrollToSection = (href) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <>
-      <motion.nav
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? "bg-[#050b18]/80 backdrop-blur-xl border-b border-blue-500/10 py-3"
-            : "bg-transparent py-5"
-        }`}
-      >
-        <div className="container mx-auto px-4 flex items-center justify-between">
-          {/* Logo */}
-          <a href="#home" className="flex items-center gap-2 group">
-            <motion.div
-              whileHover={{ rotate: 90 }}
-              transition={{ duration: 0.3 }}
-              className="w-9 h-9 rounded-lg bg-gradient-to-br from-blue-600 to-blue-400 flex items-center justify-center text-white font-bold text-sm"
-            >
-              B
-            </motion.div>
-            <span className="text-white font-semibold text-lg hidden sm:block group-hover:text-blue-400 transition-colors">
-              Bekam
-            </span>
-          </a>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="px-4 py-2 text-sm text-gray-400 hover:text-white transition-colors rounded-full hover:bg-blue-500/5"
-              >
-                {link.name}
-              </a>
-            ))}
+    <motion.nav
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled
+          ? "py-3 bg-black/70 backdrop-blur-2xl border-b border-white/[0.04]"
+          : "py-5 bg-transparent"
+      }`}
+    >
+      <div className="container mx-auto px-6 flex items-center justify-between">
+        {/* Logo */}
+        <button
+          onClick={() => scrollToSection("#home")}
+          className="relative group"
+        >
+          <div className="text-cream font-bold text-xl tracking-tight">
+            Bekam<span className="text-accent-blue">.</span>
           </div>
+          <div className="absolute -bottom-1 left-0 w-0 h-[1px] bg-accent-blue group-hover:w-full transition-all duration-300" />
+        </button>
 
-          {/* Desktop CTA */}
-          <div className="hidden md:flex items-center gap-3">
-            <Button
-              size="sm"
-              className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-5 h-10 text-sm"
-              asChild
+        {/* Nav Links */}
+        <div className="hidden md:flex items-center gap-8">
+          {navLinks.map((link) => (
+            <button
+              key={link.name}
+              onClick={() => scrollToSection(link.href)}
+              className={`text-sm tracking-wide transition-all duration-300 hover:text-cream ${
+                activeSection === link.href
+                  ? "text-cream"
+                  : "text-cream-muted"
+              }`}
             >
-              <a href="/files/BEKAMB7.pdf" download>
-                <Download className="w-4 h-4 mr-1.5" />
-                Resume
-              </a>
-            </Button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden text-white p-2"
-          >
-            {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+              {link.name}
+            </button>
+          ))}
         </div>
-      </motion.nav>
 
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.2 }}
-            className="fixed top-16 left-4 right-4 z-50 bg-[#0a1025] border border-blue-500/20 rounded-2xl backdrop-blur-xl p-6 md:hidden"
-          >
-            <div className="flex flex-col gap-2">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="px-4 py-3 text-gray-300 hover:text-white hover:bg-blue-500/10 rounded-xl transition-colors text-sm"
-                >
-                  {link.name}
-                </a>
-              ))}
-              <Button
-                className="bg-blue-600 hover:bg-blue-700 text-white rounded-full h-11 text-sm mt-2"
-                asChild
-              >
-                <a href="/files/BEKAMB7.pdf" download>
-                  <Download className="w-4 h-4 mr-1.5" />
-                  Download Resume
-                </a>
-              </Button>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </>
+        {/* Resume Button */}
+        <motion.a
+          href="/files/BEKAMB7.pdf"
+          download
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+          className="hidden md:flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/[0.03] border border-white/[0.08] text-cream text-sm hover:bg-white/[0.06] hover:border-white/[0.15] transition-all duration-300"
+        >
+          <Download className="w-3.5 h-3.5" />
+          <span>Resume</span>
+        </motion.a>
+      </div>
+    </motion.nav>
   );
 }

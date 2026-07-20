@@ -1,165 +1,178 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code2, Server, Smartphone, Brain, MapPin, Clock } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
-
-const stats = [
-  { label: "Years Experience", value: "5+" },
-  { label: "Projects Completed", value: "20+" },
-  { label: "Technologies", value: "10+" },
-  { label: "Happy Clients", value: "15+" },
-];
+import { Code2, Database, Smartphone, Brain, Sparkles, ArrowRight } from "lucide-react";
 
 const services = [
   {
     icon: Code2,
-    title: "Frontend Development",
-    description: "Building responsive, performant web apps with React, Next.js & Tailwind",
-    color: "from-blue-500/20 to-blue-600/5",
-    borderColor: "border-blue-500/30",
+    title: "Frontend Engineering",
+    desc: "React, Next.js, Tailwind — crafting interfaces that feel alive.",
   },
   {
-    icon: Server,
-    title: "Backend Development",
-    description: "Scalable APIs with Node.js, Express & Python FastAPI",
-    color: "from-emerald-500/20 to-emerald-600/5",
-    borderColor: "border-emerald-500/30",
+    icon: Database,
+    title: "Backend Architecture",
+    desc: "Node.js, Express, FastAPI — scalable APIs that just work.",
   },
   {
     icon: Smartphone,
     title: "Mobile Development",
-    description: "Cross-platform mobile apps built with Flutter",
-    color: "from-purple-500/20 to-purple-600/5",
-    borderColor: "border-purple-500/30",
+    desc: "Flutter apps with native performance and beautiful design.",
   },
   {
     icon: Brain,
     title: "AI Integration",
-    description: "LLM-powered features, automation & OpenAI API integration",
-    color: "from-amber-500/20 to-amber-600/5",
-    borderColor: "border-amber-500/30",
+    desc: "OpenAI, LLMs, automation — intelligent features that add value.",
+  },
+];
+
+const experiences = [
+  {
+    role: "Full Stack Developer",
+    company: "Nebalab Team",
+    period: "2023 - Present",
+    type: "Team",
+  },
+  {
+    role: "Backend Developer",
+    company: "Freelance",
+    period: "2021 - 2023",
+    type: "Freelance",
+  },
+  {
+    role: "Junior Developer",
+    company: "Self-Taught Journey",
+    period: "2019 - 2021",
+    type: "Learning",
   },
 ];
 
 export default function About() {
   return (
-    <section id="about" className="relative py-24 lg:py-32">
-      <div className="container mx-auto px-4">
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <Badge variant="secondary" className="mb-4 px-4 py-1.5 text-sm">
-            About Me
-          </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Crafting Digital{" "}
-            <span className="bg-gradient-to-r from-blue-400 to-blue-300 bg-clip-text text-transparent">
-              Excellence
+    <section id="about" className="relative py-32 bg-pitch-black">
+      <div className="container mx-auto px-6">
+        <div className="max-w-6xl mx-auto">
+          {/* Section Label */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex items-center gap-3 mb-16"
+          >
+            <span className="text-xs tracking-[0.3em] uppercase text-accent-blue font-semibold">
+              About
             </span>
-          </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-            Building robust, scalable solutions that bridge the gap between ideas and reality.
-          </p>
-        </motion.div>
+            <div className="h-px flex-1 bg-white/[0.06]" />
+          </motion.div>
 
-        {/* Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2, duration: 0.6 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20"
-        >
-          {stats.map((stat, index) => (
-            <Card
-              key={index}
-              className="border-blue-500/10 bg-blue-950/10 backdrop-blur-sm text-center hover:border-blue-500/30 transition-all duration-300"
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
+            {/* Left Column */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             >
-              <CardContent className="py-6">
-                <div className="text-3xl font-bold text-blue-400 mb-1">
-                  {stat.value}
-                </div>
-                <div className="text-sm text-gray-500">{stat.label}</div>
-              </CardContent>
-            </Card>
-          ))}
-        </motion.div>
+              <h2 className="text-4xl sm:text-5xl font-bold text-cream leading-tight mb-6">
+                Crafting digital
+                <br />
+                <span className="text-gradient-blue">experiences</span> that
+                matter.
+              </h2>
+              <p className="text-cream-muted/70 leading-relaxed mb-8 font-light">
+                I started my journey 5 years ago, driven by curiosity and a
+                desire to build things that make a real impact. From self-taught
+                beginnings to working with teams, I&apos;ve developed a deep
+                understanding of both frontend elegance and backend robustness.
+              </p>
+              <p className="text-cream-muted/70 leading-relaxed font-light">
+                Based in Addis Ababa, I specialize in creating end-to-end
+                solutions — combining modern web technologies with AI
+                capabilities to deliver intelligent, scalable applications.
+              </p>
 
-        {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Left: Bio */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-          >
-            <h3 className="text-2xl font-bold text-white mb-4">
-              A bit about me
-            </h3>
-            <p className="text-gray-400 leading-relaxed mb-4">
-              I joined the tech world 5 years ago with a passion for creating impactful digital
-              solutions. Since then, I&apos;ve immersed myself in building user-centric applications
-              that solve real problems. I thrive on turning complex ideas into clean, functional
-              code that makes a difference.
-            </p>
-            <p className="text-gray-400 leading-relaxed mb-6">
-              Currently focused on Backend Development, Flutter mobile apps, AI Integration,
-              and System Design — constantly exploring new technologies and approaches to
-              deliver better solutions.
-            </p>
+              {/* Quote */}
+              <div className="mt-10 p-6 rounded-2xl bg-navy/[0.3] border border-white/[0.04] relative">
+                <Sparkles className="absolute top-4 right-4 w-4 h-4 text-accent-blue/40" />
+                <p className="text-cream-muted italic text-sm leading-relaxed">
+                  &ldquo;I believe the best solutions come from understanding
+                  both the user and the technology deeply. Every line of code
+                  should serve a purpose.&rdquo;
+                </p>
+              </div>
+            </motion.div>
 
-            <div className="flex flex-wrap gap-3 mb-6">
-              <Badge variant="outline" className="border-blue-500/40 text-blue-300">
-                <Clock className="w-3 h-3 mr-1" /> 5+ Years Exp
-              </Badge>
-              <Badge variant="outline" className="border-blue-500/40 text-blue-300">
-                <MapPin className="w-3 h-3 mr-1" /> Addis Ababa
-              </Badge>
-            </div>
+            {/* Right Column - Services & Experience */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              className="space-y-6"
+            >
+              {/* Services */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {services.map((service, i) => (
+                  <motion.div
+                    key={i}
+                    whileHover={{ y: -2 }}
+                    className="p-5 rounded-2xl border border-white/[0.04] bg-white/[0.01] hover:bg-white/[0.03] hover:border-white/[0.1] transition-all duration-300 group"
+                  >
+                    <service.icon className="w-5 h-5 text-accent-blue mb-3" />
+                    <h4 className="text-cream text-sm font-semibold mb-1">
+                      {service.title}
+                    </h4>
+                    <p className="text-cream-muted/60 text-xs leading-relaxed">
+                      {service.desc}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
 
-            <Separator className="my-6 bg-blue-500/10" />
-
-            <div className="flex items-center gap-3 text-gray-400">
-              <span className="text-sm">📍 Based in Addis Ababa, Ethiopia</span>
-            </div>
-          </motion.div>
-
-          {/* Right: Services Cards */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-4"
-          >
-            {services.map((service, index) => (
-              <Card
-                key={index}
-                className={`bg-gradient-to-br ${service.color} ${service.borderColor} backdrop-blur-sm hover:scale-[1.02] transition-all duration-300 group`}
-              >
-                <CardContent className="p-6">
-                  <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${service.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                    <service.icon className="w-5 h-5 text-blue-400" />
+              {/* Experience Timeline */}
+              <div className="space-y-1 mt-8">
+                <h3 className="text-sm font-semibold text-cream mb-4 tracking-wide uppercase">
+                  Experience
+                </h3>
+                {experiences.map((exp, i) => (
+                  <div
+                    key={i}
+                    className="flex items-start gap-4 py-3 border-b border-white/[0.03] last:border-0"
+                  >
+                    <div className="w-1.5 h-1.5 rounded-full bg-accent-blue mt-2 shrink-0" />
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between">
+                        <span className="text-cream text-sm font-medium">
+                          {exp.role}
+                        </span>
+                        <span className="text-xs text-cream-muted/50">
+                          {exp.period}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-2 mt-0.5">
+                        <span className="text-cream-muted/60 text-xs">
+                          {exp.company}
+                        </span>
+                        <span className="text-[10px] px-2 py-0.5 rounded-full bg-navy text-cream-muted/70">
+                          {exp.type}
+                        </span>
+                      </div>
+                    </div>
                   </div>
-                  <h4 className="text-white font-semibold mb-2 text-sm">
-                    {service.title}
-                  </h4>
-                  <p className="text-gray-500 text-xs leading-relaxed">
-                    {service.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </motion.div>
+                ))}
+              </div>
+
+              {/* CTA */}
+              <motion.a
+                href="#contact"
+                whileHover={{ x: 5 }}
+                className="inline-flex items-center gap-2 text-accent-blue text-sm font-medium mt-4 group"
+              >
+                Let&apos;s work together
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </motion.a>
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>
