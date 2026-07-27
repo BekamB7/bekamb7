@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 import { Download, Award, GraduationCap, CheckCircle2 } from "lucide-react";
 
 const certificates = [
-  { name: "Meta Backend Developer", issuer: "Meta", year: "2023" },
-  { name: "FreeCodeCamp Full Stack", issuer: "FreeCodeCamp", year: "2023" },
-  { name: "AI For Everyone", issuer: "DeepLearning.AI", year: "2022" },
+  { name: "Egalelion technologies ", issuer: "Egalelion", year: "2026" },
+  { name: " JImma university Software Engineering", issuer: "JIMMA UNV", year: "2022-2027" },
+  { name: "Hawai", issuer: "DeepLearning.AI", year: "2026" },
   { name: "System Design Fundamentals", issuer: "Groking", year: "2023" },
 ];
 

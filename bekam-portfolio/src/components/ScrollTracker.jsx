@@ -13,7 +13,7 @@ export default function ScrollTracker() {
   });
 
   // Keep icon within track bounds
-  const iconY = useTransform(progress, [0, 1], [0, 280]);
+  const iconY = useTransform(progress, [0, 1], [0, 600]);
 
   return (
     <aside
@@ -31,7 +31,7 @@ export default function ScrollTracker() {
         Scroll
       </span>
 
-      <div className="relative h-[280px] w-[2px] rounded-full bg-white/10">
+      <div className="relative h-[80vh] w-[2px] rounded-full bg-white/10">
         {/* Background glow */}
         <div className="absolute inset-0 rounded-full bg-gradient-to-b from-blue-500/5 via-purple-500/5 to-pink-500/5" />
 
@@ -79,7 +79,6 @@ export default function ScrollTracker() {
               scale: 0.9,
             }}
           >
-            {/* 🐊 */}
             𓆌
           </motion.div>
         </motion.div>

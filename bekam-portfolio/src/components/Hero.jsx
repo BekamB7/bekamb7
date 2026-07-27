@@ -95,7 +95,7 @@ export default function Hero() {
 
             {/* Heading */}
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight">
-              Am ready for
+              am ready for
               <br />
               <span className="gradient-text">your project</span>
             </h2>

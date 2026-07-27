@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Mail, MapPin, Send, Code, Briefcase, X } from "lucide-react";
 
 const contacts = [
-  { icon: Mail, label: "Email", value: "hello@bekamberhanu.dev", href: "mailto:hello@bekamberhanu.dev" },
+  { icon: Mail, label: "Email", value: "bebabekam@gmail.com", href: "mailto:bebabekam@gmail.com" },
   { icon: MapPin, label: "Location", value: "Addis Ababa, Ethiopia", href: null },
 ];
 
