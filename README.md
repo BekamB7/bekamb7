@@ -115,11 +115,6 @@ Bebabekam@gmail.com
 <img src="https://skillicons.dev/icons?i=git,github,figma,vscode" />
 </p>
 
-### AI & Productivity
-
-<p>
-<img src="https://skillicons.dev/icons?i=python" />
-</p>
 
 - OpenAI API
 - Prompt Engineering
