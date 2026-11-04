@@ -1,161 +1,120 @@
-<h1 align="center">
-  Hi 👋, I'm Bekam Berhanu
-</h1>
+<h1 align="center">Hi 👋, I'm Bekam Berhanu</h1>
 
-<h3 align="center">
-Frontend Developer • Future Full-Stack Engineer • AI Enthusiast
-</h3>
+<h3 align="center">Frontend Developer • Growing Full-Stack Engineer • AI Builder</h3>
 
 <p align="center">
-Building modern web applications, learning backend development, and  AI into real-world products.
+I build modern web applications and learn how to bring AI into real-world products.<br>
+Based in Addis Ababa, Ethiopia 🇪🇹
 </p>
 
-<img align="right" alt="Coding" width="400" src="https://cdn.dribbble.com/userupload/21436944/file/original-3212fe7a869a76063e59d76c39176c45.gif">
+<p align="center">
+  <a href="https://bekamb7.github.io/bekamb7/">🌍 Portfolio</a> •
+  <a href="https://github.com/BekamB7?tab=repositories">📂 Projects</a> •
+  <a href="mailto:Bebabekam@gmail.com">📧 Email</a> •
+  <a href="https://t.me/chartedadam">📱 Telegram</a>
+</p>
 
 ---
 
 ## 🚀 About Me
 
-- 💻 Frontend Developer from **Addis Ababa, Ethiopia**
-- 🌱 Currently learning **Backend Development, Flutter, AI Integration & System Design**
-- 🔭 Working on **modern web applications and digital products**
-- 🤖 Exploring **AI-powered applications, automation, and LLM integrations**
-- 👯 Open to collaborating on **Web Development, SaaS Projects, and AI Solutions**
-- 🎯 Goal: Become a highly skilled **Full-Stack Developer & AI Engineer**
-- ⚡ hobby: synthesize ideas with Intelligence machine for better knowleadge .
+- 💻 Frontend developer focused on clean, responsive, user-friendly interfaces
+- 🌱 Currently learning **backend development, Flutter, AI integration and system design**
+- 🤖 Exploring **AI-powered apps, automation and LLM integrations**
+- 🎯 Goal: become a strong **Full-Stack Developer and AI Engineer**
+- 💡 I like thinking through ideas with AI tools to learn faster and build smarter
+
+---
+
+## 🤝 Open To
+
+- Collaborating on **web development, SaaS projects and AI-powered tools**
+- Learning from and sharing with other developers
+- Open-source contributions and team projects
+
+If you're building something interesting, message me. I'd love to hear about it.
 
 ---
 
 ## 🧠 AI & Modern Development
 
-I actively use AI tools to improve development workflows:
+I use AI to improve how I design, build and ship:
 
-✔️ AI-assisted development  
-✔️ Prompt engineering  
-✔️ API integrations with AI models  
-✔️ Automation workflows  
-✔️ Rapid prototyping  
-✔️ UI/UX generation and refinement  
-✔️ Code review and optimization  
+- **AI-assisted development** and rapid prototyping
+- **Prompt engineering** and API integrations with AI models
+- **Automation workflows**
+- **Code review and optimization**
+- **UI/UX generation and refinement**
 
-Currently exploring:
+**Currently exploring:**
 
-- OpenAI APIs
-- AI-powered SaaS products
-- Intelligent chat systems
-- AI workflow automation
-- Retrieval-Augmented Generation (RAG)
-- Agent-based applications
+| Area | Focus |
+|------|-------|
+| 🔌 APIs | OpenAI API, LLM-powered features |
+| 💬 Products | Intelligent chat systems, AI-powered SaaS |
+| 📚 Techniques | Retrieval-Augmented Generation (RAG) |
+| 🕹️ Systems | Agent-based applications, workflow automation |
 
 ---
 
-## 🌐 Portfolio & Contact
+<!--
+## ⭐ Featured Projects
 
-📂 **Projects:**  
-https://github.com/BekamB7?tab=repositories
+Add your 2-3 best projects here. Example format:
 
-🌍 **Portfolio:**  
-https://bekamb7.github.io/bekamb7/
-
-📧 **Email:**  
-Bebabekam@gmail.com
-
-📱 **Telegram:**  
-@chartedadam
-
----
-
-## 🤝 Connect With Me
-
-<p align="left">
-<a href="https://x.com/bekam_baki12" target="_blank">
-<img src="https://skillicons.dev/icons?i=twitter" />
-</a>
-
-<a href="https://instagram.com/baki_mi_ni" target="_blank">
-<img src="https://skillicons.dev/icons?i=instagram" />
-</a>
-
-<a href="mailto:Bebabekam@gmail.com">
-<img src="https://skillicons.dev/icons?i=gmail" />
-</a>
-</p>
-
----
+### [Project Name](link)
+One sentence on what it does and who it helps.
+**Built with:** React, Node.js, OpenAI API
+-->
 
 ## 🛠️ Tech Stack
 
-### Frontend
-
+**Frontend**
 <p>
 <img src="https://skillicons.dev/icons?i=html,css,javascript,react,bootstrap" />
 </p>
 
-### Backend
-
+**Backend**
 <p>
 <img src="https://skillicons.dev/icons?i=nodejs,express,php,mysql" />
 </p>
 
-### Mobile
-
+**Mobile**
 <p>
 <img src="https://skillicons.dev/icons?i=flutter" />
 </p>
 
-### Programming Languages
-
+**Languages**
 <p>
 <img src="https://skillicons.dev/icons?i=javascript,python,java,cpp" />
 </p>
 
-### Tools & Platforms
-
+**Tools**
 <p>
 <img src="https://skillicons.dev/icons?i=git,github,figma,vscode" />
 </p>
 
-
-- OpenAI API
-- Prompt Engineering
-- AI Integrations
-- Automation Workflows
-- LLM Applications
-
 ---
 
-## 📈 GitHub Analytics
+## 📈 GitHub Stats
 
 <p align="center">
-<img src="https://github-readme-stats.vercel.app/api?username=BekamB7&show_icons=true&theme=tokyonight" />
+<img height="170" src="https://github-readme-stats.vercel.app/api?username=BekamB7&show_icons=true&theme=tokyonight&hide_border=true" />
+<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=BekamB7&layout=compact&theme=tokyonight&hide_border=true" />
 </p>
 
 <p align="center">
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=BekamB7&theme=tokyonight" />
-</p>
-
-<p align="center">
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=BekamB7&layout=compact&theme=tokyonight" />
+<img src="https://streak-stats.demolab.com/?user=BekamB7&theme=tokyonight&hide_border=true" />
 </p>
 
 ---
 
-## 🏆 GitHub Trophies
+## 📬 Let's Connect
 
 <p align="center">
-<img src="https://github-profile-trophy.vercel.app/?username=BekamB7&theme=tokyonight&margin-w=15&margin-h=15" />
+<a href="https://x.com/bekam_baki12" target="_blank"><img src="https://skillicons.dev/icons?i=twitter" /></a>
+<a href="https://instagram.com/baki_mi_ni" target="_blank"><img src="https://skillicons.dev/icons?i=instagram" /></a>
+<a href="mailto:Bebabekam@gmail.com"><img src="https://skillicons.dev/icons?i=gmail" /></a>
 </p>
 
----
-
-## 👀 Profile Views
-
-<p align="center">
-<img src="https://komarev.com/ghpvc/?username=BekamB7&label=Profile%20Views&color=blueviolet&style=for-the-badge" />
-</p>
-
----
-
-<h3 align="center">
-🚀 Building • Learning • Improving Every Day
-</h3>
+<h3 align="center">🚀 Building • Learning • Improving Every Day</h3>
