@@ -5,17 +5,24 @@ import { Briefcase, Calendar, MapPin } from "lucide-react";
 
 const experiences = [
   {
-    year: "2025 – 2026 (6 months)",
-    role: "Team Lead (Internship)",
-    company: "Eagle Lion Systems",
-    location: "Addis Ababa, Ethiopia",
+    year: "2023 / 2024",
+    role: "MERN Stack Development",
+    company: "Evangadi (evangadi.com)",
+    location: "Remote (online)",
     description: [
-      "Pitched the product idea and led the team.",
-      "Set the design structure for the project.",
-      "Managed the team through implementation.",
+      "Learned MERN stack web development, which was my starting boost into web development.",
     ],
-    // TODO(Bekam): add technologies/product used at Eagle Lion Systems
     skills: [],
+    learning: true,
+  },
+  {
+    year: "2023 – Present",
+    role: "Software Engineering (BSc)",
+    company: "Jimma University",
+    location: "Jimma, Ethiopia",
+    description: ["Ongoing bachelor's program in Software Engineering."],
+    skills: [],
+    learning: true,
   },
   {
     year: "2025 (6 months)",
@@ -35,24 +42,17 @@ const experiences = [
     ],
   },
   {
-    year: "2023 – Present",
-    role: "Software Engineering (BSc)",
-    company: "Jimma University",
-    location: "Jimma, Ethiopia",
-    description: ["Ongoing bachelor's program in Software Engineering."],
-    skills: [],
-    learning: true,
-  },
-  {
-    year: "2023 / 2024",
-    role: "MERN Stack Development",
-    company: "Evangadi (evangadi.com)",
-    location: "Remote (online)",
+    year: "2025 – 2026 (6 months)",
+    role: "Team Lead (Internship)",
+    company: "Eagle Lion Systems",
+    location: "Addis Ababa, Ethiopia",
     description: [
-      "Learned MERN stack web development, which was my starting boost into web development.",
+      "Pitched the product idea and led the team.",
+      "Set the design structure for the project.",
+      "Managed the team through implementation.",
     ],
+    // TODO(Bekam): add technologies/product used at Eagle Lion Systems
     skills: [],
-    learning: true,
   },
 ];
 
@@ -79,9 +79,6 @@ export default function Experience() {
         </motion.div>
 
         <div className="relative">
-          {/* Timeline Line */}
-          <div className="absolute left-[19px] top-0 bottom-0 w-[2px] bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 opacity-30" />
-
           <div className="space-y-12">
             {experiences.map((exp, index) => (
               <motion.div
@@ -92,12 +89,16 @@ export default function Experience() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="relative pl-16 group"
               >
+                {index < experiences.length - 1 && (
+                  <div className="absolute left-[19px] top-7 z-0 h-[calc(100%+3rem)] w-[2px] bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 opacity-30" />
+                )}
+
                 {/* Timeline Dot */}
-                <div className="absolute left-0 top-2 w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center shadow-[0_0_40px_rgba(59,130,246,0.2)] group-hover:shadow-[0_0_60px_rgba(59,130,246,0.3)] transition-shadow">
+                <div className="absolute left-0 top-2 z-10 w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center shadow-[0_0_40px_rgba(59,130,246,0.2)] group-hover:shadow-[0_0_60px_rgba(59,130,246,0.3)] transition-shadow">
                   <Briefcase size={16} className="text-white" />
                 </div>
 
-                <div className="p-8 rounded-3xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-500 group-hover:border-white/20">
+                <div className="relative z-10 p-8 rounded-3xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-500 group-hover:border-white/20">
                   <div className="flex flex-wrap items-start justify-between gap-4">
                     <div>
                       <span className="text-sm text-purple-400 font-medium flex items-center gap-2">
