@@ -5,28 +5,54 @@ import { Briefcase, Calendar, MapPin } from "lucide-react";
 
 const experiences = [
   {
-    year: "2023 - Present",
-    role: "Full Stack Developer",
-    company: "Nebalab Team",
-    location: "Remote",
-    description: "Building scalable web applications, APIs, and digital products with modern technologies and best practices.",
-    skills: ["React", "Node.js", "TypeScript", "AWS"],
+    year: "2025 – 2026 (6 months)",
+    role: "Team Lead (Internship)",
+    company: "Eagle Lion Systems",
+    location: "Addis Ababa, Ethiopia",
+    description: [
+      "Pitched the product idea and led the team.",
+      "Set the design structure for the project.",
+      "Managed the team through implementation.",
+    ],
+    // TODO(Bekam): add technologies/product used at Eagle Lion Systems
+    skills: [],
   },
   {
-    year: "2021 - 2023",
-    role: "Backend Developer",
-    company: "Freelance",
-    location: "Addis Ababa",
-    description: "Designed backend systems, databases, and REST APIs for various applications and clients.",
-    skills: ["Express", "MySQL", "REST API", "Prisma"],
+    year: "2025 (6 months)",
+    role: "Frontend Developer",
+    company: "Nebelbal",
+    location: "Addis Ababa, Ethiopia",
+    description:
+      "Built the user interface for the salon and business management dashboard. Integrated backend APIs using RTK Query and Axios, and added real-time sales and attendance updates with Socket.IO.",
+    skills: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Redux Toolkit",
+      "RTK Query",
+      "Socket.IO",
+    ],
   },
   {
-    year: "2019 - 2021",
-    role: "Self-Taught Developer",
-    company: "Learning Journey",
-    location: "Online",
-    description: "Built strong foundations in programming, web development, and software engineering through self-learning.",
-    skills: ["JavaScript", "Python", "HTML/CSS", "Git"],
+    year: "2023 – Present",
+    role: "Software Engineering (BSc)",
+    company: "Jimma University",
+    location: "Jimma, Ethiopia",
+    description: ["Ongoing bachelor's program in Software Engineering."],
+    skills: [],
+    learning: true,
+  },
+  {
+    year: "2023 / 2024",
+    role: "MERN Stack Development",
+    company: "Evangadi (evangadi.com)",
+    location: "Remote (online)",
+    description: [
+      "Learned MERN stack web development, which was my starting boost into web development.",
+    ],
+    skills: [],
+    learning: true,
   },
 ];
 
@@ -87,18 +113,36 @@ export default function Experience() {
                     </div>
                   </div>
 
-                  <p className="mt-4 text-muted leading-relaxed">{exp.description}</p>
+                  {exp.learning && (
+                    <span className="inline-flex mt-3 rounded-full border border-blue-400/30 bg-blue-500/10 px-3 py-1 text-xs text-blue-300">
+                      Learning
+                    </span>
+                  )}
 
-                  <div className="flex flex-wrap gap-2 mt-6">
-                    {exp.skills.map((skill) => (
-                      <span
-                        key={skill}
-                        className="px-3 py-1.5 rounded-full text-xs border border-white/10 bg-white/5 text-muted-light"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
+                  {Array.isArray(exp.description) ? (
+                    <ul className="mt-4 list-disc space-y-1 pl-5 text-muted leading-relaxed">
+                      {exp.description.map((detail) => (
+                        <li key={detail}>{detail}</li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="mt-4 text-muted leading-relaxed">
+                      {exp.description}
+                    </p>
+                  )}
+
+                  {exp.skills.length > 0 && (
+                    <div className="flex flex-wrap gap-2 mt-6">
+                      {exp.skills.map((skill) => (
+                        <span
+                          key={skill}
+                          className="px-3 py-1.5 rounded-full text-xs border border-white/10 bg-white/5 text-muted-light"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </motion.div>
             ))}

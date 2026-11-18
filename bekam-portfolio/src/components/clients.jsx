@@ -3,10 +3,8 @@
 import { motion } from "framer-motion";
 
 const clients = [
-  { name: "foodpanda", icon: "🛵" },
-  { name: "potato", icon: "🥔" },
-  { name: "BAGDCOM", icon: "📡" },
-  { name: "Google", icon: "🔍" },
+  { name: "Eagle Lion Systems", href: "https://www.eaglelionsystems.com/" },
+  { name: "Nebelbal", href: "https://salon.nebelbal.com/?lang=en" },
 ];
 
 export default function Clients() {
@@ -23,13 +21,16 @@ export default function Clients() {
           viewport={{ once: true }}
           className="text-center text-sm text-muted uppercase tracking-[0.3em] mb-12"
         >
-          Trusted by brands worldwide
+          Worked With
         </motion.p>
 
         <div className="flex flex-wrap justify-center items-center gap-16 md:gap-24">
           {clients.map((client, index) => (
-            <motion.div
+            <motion.a
               key={client.name}
+              href={client.href}
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -37,18 +38,15 @@ export default function Clients() {
               whileHover={{ scale: 1.1, y: -4 }}
               className="group cursor-pointer"
             >
-              <div className="flex flex-col items-center gap-2">
-                <span className="text-5xl md:text-6xl opacity-30 group-hover:opacity-100 transition-all duration-500 grayscale group-hover:grayscale-0">
-                  {client.icon}
-                </span>
-                <span className="text-lg font-bold text-muted group-hover:text-white transition-colors duration-300">
-                  {client.name}
-                </span>
-                <div className="w-0 h-[2px] bg-gradient-to-r from-blue-400 to-purple-400 group-hover:w-full transition-all duration-500" />
-              </div>
-            </motion.div>
+              <span className="flex flex-col items-center gap-2 text-lg font-bold text-muted group-hover:text-white transition-colors duration-300">
+                {client.name}
+                <span className="w-0 h-[2px] bg-gradient-to-r from-blue-400 to-purple-400 group-hover:w-full transition-all duration-500" />
+              </span>
+            </motion.a>
           ))}
         </div>
+
+        {/* TODO(Bekam): add client logo files later if permission is given */}
       </div>
     </section>
   );

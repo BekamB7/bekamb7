@@ -13,7 +13,7 @@ export default function ScrollTracker() {
   });
 
   // Keep icon within track bounds
-  const iconY = useTransform(progress, [0, 1], [0, 600]);
+  const iconY = useTransform(progress, [0, 1], [0, 550]);
 
   return (
     <aside

@@ -2,75 +2,96 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { ArrowRight, Download, Code, Briefcase, X } from "lucide-react";
+import {
+  ArrowRight,
+  Download,
+  Send,
+  X,
+} from "lucide-react";
 import { useEffect, useState } from "react";
+import { FaGithub, FaInstagram } from "react-icons/fa";
+
+const roles = ["Web Apps", "Mobile Apps", "UI Design", "AI Integration"];
+
+const socialLinks = [
+  { label: "GitHub", icon: FaGithub, href: "https://github.com/BekamB7" },
+  { label: "X", icon: X, href: "https://x.com/Bekam_baki12" },
+  {
+    label: "Instagram",
+    icon: FaInstagram,
+    href: "https://www.instagram.com/baki_m_ni/",
+  },
+  { label: "Telegram", icon: Send, href: "https://t.me/Chartedadam" },
+];
 
 export default function Hero() {
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopIndex, setLoopIndex] = useState(0);
-  const [typingSpeed, setTypingSpeed] = useState(150);
-
-  const roles = [
-    "Full Stack Developer",
-    "UI/UX Designer",
-    "AI Enthusiast",
-    "Problem Solver",
-  ];
 
   useEffect(() => {
-    let timer;
     const currentRole = roles[loopIndex % roles.length];
-
-    if (isDeleting) {
-      setTypingSpeed(50);
-      timer = setTimeout(() => {
-        setDisplayText(currentRole.substring(0, displayText.length - 1));
+    const delay = isDeleting
+      ? 50
+      : displayText === currentRole
+        ? 2000
+        : 150;
+    const timer = setTimeout(() => {
+      if (isDeleting) {
         if (displayText.length === 0) {
           setIsDeleting(false);
-          setLoopIndex(loopIndex + 1);
-          setTypingSpeed(150);
+          setLoopIndex((index) => index + 1);
+        } else {
+          setDisplayText(currentRole.substring(0, displayText.length - 1));
         }
-      }, typingSpeed);
-    } else {
-      timer = setTimeout(() => {
+      } else if (displayText === currentRole) {
+        setIsDeleting(true);
+      } else {
         setDisplayText(currentRole.substring(0, displayText.length + 1));
-        if (displayText.length === currentRole.length) {
-          setTimeout(() => setIsDeleting(true), 2000);
-        }
-      }, typingSpeed);
-    }
+      }
+    }, delay);
 
     return () => clearTimeout(timer);
-  }, [displayText, isDeleting, loopIndex, roles, typingSpeed]);
+  }, [displayText, isDeleting, loopIndex]);
 
   return (
     <section
       id="home"
       className="relative min-h-screen flex items-center bg-[#0a0a0a] overflow-hidden"
     >
-      {/* Profile Image as Background - Positioned on the Right */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-full opacity-20">
-          <Image
-            src="/profile.png"
-            alt="Bekam Berhanu"
-            fill
-            className="object-cover object-right"
-            priority
-          />
-        </div>
-        {/* Gradient Overlay to fade the image */}
-        <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#0a0a0a]/60 to-[#0a0a0a] z-[1]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0a0a0a]/40 z-[1]" />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0">
+        <div className="absolute inset-0 grid-pattern opacity-20" />
       </div>
 
-      {/* Grid Pattern Overlay */}
-      <div className="absolute inset-0 grid-pattern opacity-20 z-[2]" />
+      <div className="pointer-events-none absolute bottom-0 right-0 z-[1] h-[55%] md:h-[65%] lg:bottom-auto lg:-top-[4%] lg:h-[104%]">
+        <Image
+          src="/portfolio_background_removed.png"
+          alt="Bekam Berhanu"
+          width={430}
+          height={580}
+          sizes="(min-width: 1024px) 54vw, (min-width: 768px) 68vw, 85vw"
+          className="h-full w-auto max-w-none object-contain object-bottom"
+          style={{
+            maskImage:
+              "linear-gradient(to bottom, black 80%, transparent 100%)",
+            WebkitMaskImage:
+              "linear-gradient(to bottom, black 80%, transparent 100%)",
+          }}
+          priority
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse at 50% 35%, rgba(10,10,10,0) 35%, rgba(10,10,10,0.3) 70%, rgba(10,10,10,0.55) 100%)",
+          }}
+        />
+      </div>
 
       {/* Content */}
       <div className="container mx-auto px-6 relative z-10 py-20">
-        <div className="max-w-3xl">
+        <div className="w-full max-w-full lg:max-w-[min(31vw,640px)] xl:max-w-[min(34vw,640px)]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -84,35 +105,37 @@ export default function Hero() {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400" />
               </span>
               <span className="text-xs font-medium text-muted-light">
-                Available for opportunities
+                Available for freelance &amp; remote work
               </span>
             </div>
 
             {/* Name */}
-            <h1 className="text-5xl font-bold text-white tracking-tight">
-              I'm <span className="gradient-text">Bekam</span>
+            <h1 className="text-[clamp(2.25rem,4vw,4.25rem)] font-bold text-white tracking-tight leading-tight">
+              I&apos;m <span className="gradient-text">Bekam Berhanu</span>
             </h1>
 
-            {/* Heading */}
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight">
-              am ready for
-              <br />
-              <span className="gradient-text">your project</span>
+            <p className="text-[clamp(1.1rem,1.75vw,1.5rem)] font-medium text-muted-light">
+              Full-Stack Developer
+            </p>
+
+            <h2 className="text-[clamp(1.4rem,2.65vw,2.75rem)] font-bold tracking-tight leading-tight text-balance">
+              I build simple, impactful products{" "}
+              <span className="gradient-text">with clear structure.</span>
             </h2>
 
-            {/* Typing Effect */}
-            <div className="flex items-center gap-2">
-              <span className="text-base text-muted">I'm a</span>
-              <span className="text-base font-semibold text-white">
+            <div className="min-h-6 text-sm leading-6">
+              <span className="text-muted">Specializing in </span>
+              <span className="font-semibold text-blue-400">
                 {displayText}
-                <span className="inline-block w-[2px] h-4 bg-blue-400 ml-0.5 animate-pulse" />
+                <span className="ml-0.5 inline-block h-4 w-[2px] animate-pulse bg-blue-400 align-middle" />
               </span>
             </div>
 
             {/* Description */}
             <p className="text-sm text-muted max-w-lg leading-relaxed">
-              I'm a Full Stack Developer specializing in modern web applications,
-              backend architecture, and AI integrations that drive real impact.
+              Full-stack developer building web apps, mobile apps, and
+              AI-powered features, with a business eye for solving real problems
+              with the least complexity.
             </p>
 
             {/* Buttons */}
@@ -127,28 +150,29 @@ export default function Hero() {
                 <ArrowRight size={15} />
               </motion.a>
 
+              {/* TODO(Bekam): add resume.pdf to /public */}
               <motion.a
-                href="/files/BEKAMB7.pdf"
+                href="/resume.pdf"
                 download
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 className="px-7 py-3 rounded-full border border-white/10 bg-black/30 backdrop-blur-sm text-white font-medium text-sm flex items-center gap-2 hover:bg-white/10 transition"
               >
                 <Download size={15} />
-                Download CV
+                Download Resume
               </motion.a>
             </div>
 
             {/* Social */}
             <div className="flex gap-3 pt-4">
-              {[
-                { icon: Code , href: "#" },
-                { icon: Briefcase, href: "#" },
-                { icon: X, href: "#" },
-              ].map((social, i) => (
+              {/* TODO(Bekam): add LinkedIn link when ready */}
+              {socialLinks.map((social) => (
                 <motion.a
-                  key={i}
+                  key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.9 }}
                   className="w-10 h-10 rounded-full border border-white/10 bg-black/30 backdrop-blur-sm flex items-center justify-center text-muted hover:text-white hover:border-white/20 transition-all duration-300"
