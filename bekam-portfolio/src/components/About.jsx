@@ -82,7 +82,7 @@ export default function About() {
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5" />
               <Sparkles className="text-purple-400 mb-3 relative z-10" />
               <p className="italic text-muted-light relative z-10">
-                &quot;At any point in life, seek the value and test it.&quot;
+                &quot;In every part of life, always hunt for value.&quot;
               </p>
             </div>
 
