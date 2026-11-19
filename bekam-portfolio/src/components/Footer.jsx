@@ -60,7 +60,7 @@ export default function Footer() {
                 © {new Date().getFullYear()} Bekam Berhanu
               </p>
               <p className="text-xs text-muted flex items-center gap-1 mt-1">
-                Made with <Heart size={12} className="text-pink-500" /> in
+                Made in
                 Ethiopia
               </p>
             </div>
