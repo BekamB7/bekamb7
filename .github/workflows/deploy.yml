@@ -29,11 +29,11 @@ jobs:
           node-version: 22
 
       - name: Install dependencies
-        working-directory: ./bekam-pirtfolio
+        working-directory: ./bekam-portfolio
         run: npm ci
 
       - name: Build portfolio
-        working-directory: ./bekam-pirtfolio
+        working-directory: ./bekam-portfolio
         run: npm run build
 
       - name: Upload website
