@@ -36,10 +36,14 @@ jobs:
         working-directory: ./bekam-portfolio
         run: npm run build
 
+      - name: Check export
+        working-directory: ./bekam-portfolio
+        run: ls -la out
+
       - name: Upload website
         uses: actions/upload-pages-artifact@v3
         with:
-           path: ./out
+          path: ./bekam-portfolio/out
 
   deploy:
     needs: build
