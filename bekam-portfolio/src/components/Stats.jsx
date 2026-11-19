@@ -4,23 +4,13 @@ import { motion } from "framer-motion";
 
 const stats = [
   {
-    number: "5+",
-    label: "Years Learning",
+    number: "3.5",
+    label: "Years Building Software",
   },
 
   {
-    number: "20+",
-    label: "Projects Built",
-  },
-
-  {
-    number: "10+",
-    label: "Technologies",
-  },
-
-  {
-    number: "100%",
-    label: "Passion For Building",
+    number: "7+",
+    label: "Projects Completed",
   },
 ];
 

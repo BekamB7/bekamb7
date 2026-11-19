@@ -1,7 +1,24 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUp, Code, Briefcase, X, Heart } from "lucide-react";
+import {
+  ArrowUp,
+  Heart,
+  Send,
+  X,
+} from "lucide-react";
+import { FaGithub, FaInstagram } from "react-icons/fa";
+
+const socialLinks = [
+  { label: "GitHub", icon: FaGithub, href: "https://github.com/BekamB7" },
+  { label: "X", icon: X, href: "https://x.com/Bekam_baki12" },
+  {
+    label: "Instagram",
+    icon: FaInstagram,
+    href: "https://www.instagram.com/baki_m_ni/",
+  },
+  { label: "Telegram", icon: Send, href: "https://t.me/Chartedadam" },
+];
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -14,40 +31,39 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-center md:text-left">
             <h3 className="text-2xl font-black text-white">
-              Bekam<span className="gradient-text">.</span>
+              Bekam Berhanu<span className="gradient-text">.</span>
             </h3>
-            <p className="text-sm text-muted mt-1">Full Stack Developer</p>
-          </div>
-
-          <div className="flex items-center gap-6">
-            <motion.a
-              whileHover={{ scale: 1.1, y: -2 }}
-              href="#"
-              className="text-muted hover:text-white transition-colors"
-            >
-              <Code size={18} />
-            </motion.a>
-            <motion.a
-              whileHover={{ scale: 1.1, y: -2 }}
-              href="#"
-              className="text-muted hover:text-white transition-colors"
-            >
-              <Briefcase size={18} />
-            </motion.a>
-            <motion.a
-              whileHover={{ scale: 1.1, y: -2 }}
-              href="#"
-              className="text-muted hover:text-white transition-colors"
-            >
-              <X size={18} />
-            </motion.a>
-          </div>
-
-          <div className="flex items-center gap-6">
-            <p className="text-xs text-muted flex items-center gap-1">
-              Made with <Heart size={12} className="text-pink-500" /> in
-              Ethiopia
+            <p className="text-sm text-muted mt-1">
+              Bekam Berhanu · Full-Stack Developer · Addis Ababa, Ethiopia
             </p>
+          </div>
+
+          <div className="flex items-center gap-6">
+            {socialLinks.map((social) => (
+              <motion.a
+                key={social.label}
+                whileHover={{ scale: 1.1, y: -2 }}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.label}
+                className="text-muted hover:text-white transition-colors"
+              >
+                <social.icon size={18} />
+              </motion.a>
+            ))}
+          </div>
+
+          <div className="flex items-center gap-6">
+            <div className="text-right">
+              <p className="text-xs text-muted">
+                © {new Date().getFullYear()} Bekam Berhanu
+              </p>
+              <p className="text-xs text-muted flex items-center gap-1 mt-1">
+                Made with <Heart size={12} className="text-pink-500" /> in
+                Ethiopia
+              </p>
+            </div>
 
             <motion.button
               whileHover={{ scale: 1.1, y: -2 }}

@@ -5,46 +5,80 @@ import { ExternalLink, Code, Folder } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 
+// TODO(Bekam): add more projects here later (7+ projects built so far)
 const projects = [
   {
-    title: "Digital Menu SaaS",
+    title: "MenuGo",
+    category: "Web App",
     description:
-      "A SaaS platform for restaurants to create and manage digital menus with QR code integration, real-time updates, and analytics dashboard.",
-    tech: ["Next.js", "Node.js", "MySQL", "Tailwind CSS", "QR API"],
-    image: "/images/project-digital-menu.jpg",
-    live: "#",
-    github: "#",
+      "Digital Restaurant Menu & Smart Recommendation System. Replaces paper-based menus with a digital platform for convenient menu browsing, food discovery, and ordering. My role: Backend development and API integration. Frontend on Vercel, backend on Render.",
+    tech: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MySQL",
+      "Prisma",
+      "Tailwind CSS",
+      "REST API",
+    ],
+    // TODO(Bekam): add project1.png
+    image: "/project1.png",
+    live: "https://menu-go-digital-menu.vercel.app/",
+    code: "https://github.com/BekamB7/MenuGo-Digital-menu/",
     featured: true,
   },
   {
-    title: "Mezmur App",
+    title: "Fast-Ex",
+    category: "SaaS Platform",
     description:
-      "A mobile-friendly web app for browsing and listening to spiritual songs with search, favorites, and offline caching features.",
-    tech: ["React", "FastAPI", "MySQL", "Audio API"],
-    image: "/images/project-mezmur.jpg",
-    live: "#",
-    github: "#",
+      "Multi-Tenant Online Exam Platform for institutions to host branded exams with secure codes, timed questions, auto-graded results, PDF exports, and a super-admin dashboard. Built solo, including the database, APIs, authentication, grading, and Next.js frontend.",
+    tech: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Node.js",
+      "Express.js",
+      "Prisma",
+      "MySQL",
+      "JWT",
+      "Vercel",
+    ],
+    // TODO(Bekam): add project2.png
+    image: "/project2.png",
+    live: "https://fast-ex-three.vercel.app/",
+    // TODO(Bekam): confirm this exact repo URL
+    code: "https://github.com/BekamB7/Fast-Ex",
     featured: true,
   },
   {
-    title: "District Management",
+    title: "Nebelbal",
+    category: "SaaS Dashboard",
     description:
-      "A comprehensive solution for managing district-level operations, resource allocation, and reporting workflows.",
-    tech: ["Next.js", "Express", "MySQL", "Tailwind CSS"],
-    image: "/images/project-district.jpg",
-    live: "#",
-    github: "#",
-    featured: false,
-  },
-  {
-    title: "Nebalab Team Platform",
-    description:
-      "A collaborative platform for the Nebalab team to streamline project management, task tracking, and communication.",
-    tech: ["Next.js", "Node.js", "MySQL", "WebSocket"],
-    image: "/images/project-nebalab.jpg",
-    live: "#",
-    github: "#",
-    featured: false,
+      "Salon & Business Management Dashboard bringing appointments, staff attendance and commissions, product stock, and customer payments into one place. Frontend Developer: built responsive interfaces, integrated backend APIs, and added real-time sales and attendance updates.",
+    tech: [
+      "Next.js (App Router)",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Redux Toolkit",
+      "RTK Query",
+      "Axios",
+      "Socket.IO",
+      "React Hook Form",
+      "Zod",
+      "Redux Persist",
+      "date-fns",
+      "lucide-react",
+      "ESLint",
+      "Husky",
+    ],
+    // TODO(Bekam): add project3.png
+    image: "/project3.png",
+    live: "https://salon.nebelbal.com/?lang=en",
+    privateRepository: true,
+    featured: true,
   },
 ];
 
@@ -105,14 +139,17 @@ export default function Projects() {
                       >
                         <ExternalLink className="w-4 h-4 text-white" />
                       </a>
-                      <a
-                        href={project.github}
-                        className="w-10 h-10 rounded-full bg-gray-800/80 flex items-center justify-center hover:bg-gray-700 transition-colors"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Code className="w-4 h-4 text-white" />
-                      </a>
+                      {project.code && (
+                        <a
+                          href={project.code}
+                          className="w-10 h-10 rounded-full bg-gray-800/80 flex items-center justify-center hover:bg-gray-700 transition-colors"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`View ${project.title} source code`}
+                        >
+                          <Code className="w-4 h-4 text-white" />
+                        </a>
+                      )}
                     </div>
                   </div>
 
@@ -135,6 +172,11 @@ export default function Projects() {
                         </Badge>
                       ))}
                     </div>
+                    {project.privateRepository && (
+                      <p className="mt-4 text-sm text-gray-400">
+                        Private repository
+                      </p>
+                    )}
                   </div>
                 </CardContent>
               </Card>

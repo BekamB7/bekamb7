@@ -1,9 +1,14 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Bekam Berhanu | Full Stack Developer",
+  title: "Bekam Berhanu | Full-Stack Developer for Web, Mobile & AI",
   description:
-    "Bekam Berhanu - Full Stack Developer building user-centric digital solutions with AI integration and modern web technologies.",
+    "Portfolio of Bekam Berhanu, a full-stack developer from Ethiopia building simple, impactful web apps, mobile apps, and AI-powered products.",
+  openGraph: {
+    title: "Bekam Berhanu | Full-Stack Developer for Web, Mobile & AI",
+    description:
+      "Portfolio of Bekam Berhanu, a full-stack developer from Ethiopia building simple, impactful web apps, mobile apps, and AI-powered products.",
+  },
 };
 
 export default function RootLayout({ children }) {

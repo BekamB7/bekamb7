@@ -1,34 +1,37 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Sparkles, Code2, Rocket, Brain, Zap, Users } from "lucide-react";
+import {
+  Sparkles,
+  ScanSearch,
+  CircleCheck,
+  BriefcaseBusiness,
+} from "lucide-react";
 
 const highlights = [
   {
-    icon: Code2,
-    title: "Full Stack Development",
-    text: "Building modern frontend experiences and scalable backend systems with best practices.",
+    icon: ScanSearch,
+    title: "Problem Breakdown",
+    text: "Splitting a complex problem into small, solvable parts before writing any code.",
     color: "blue",
   },
   {
-    icon: Brain,
-    title: "AI Integration",
-    text: "Creating intelligent features using AI APIs, machine learning, and automation.",
+    icon: CircleCheck,
+    title: "Simplicity",
+    text: "Building clear structures and easy solutions that reduce complexity for users.",
     color: "purple",
   },
   {
-    icon: Rocket,
-    title: "Product Thinking",
-    text: "Turning ideas into useful digital products that people actually want to use.",
+    icon: BriefcaseBusiness,
+    title: "Business Eye",
+    text: "Thinking about the value and impact of a product, not only the code behind it.",
     color: "pink",
   },
 ];
 
 const stats = [
-  { value: "5+", label: "Years of Experience" },
-  { value: "20+", label: "Projects Completed" },
-  { value: "10+", label: "Technologies" },
-  { value: "100%", label: "Passion for Building" },
+  { value: "3.5", label: "Years Building Software" },
+  { value: "7+", label: "Projects Completed" },
 ];
 
 export default function About() {
@@ -55,31 +58,36 @@ export default function About() {
             </div>
 
             <h2 className="text-5xl md:text-6xl font-black text-white leading-tight">
-              Building technology that creates
-              <span className="gradient-text block mt-2">real impact.</span>
+              Simple solutions.
+              <span className="gradient-text block mt-2">Real impact.</span>
             </h2>
 
             <p className="mt-8 text-lg leading-relaxed text-muted">
-              I'm <span className="text-white font-semibold">Bekam Berhanu</span>, a Full Stack Developer 
-              focused on creating modern web applications, backend architectures, and AI-powered solutions 
-              that make a difference.
+              I&apos;m <span className="text-white font-semibold">Bekam Berhanu</span>,
+              a fifth-year Software Engineering student at Jimma University and
+              a full-stack developer with 3.5 years of experience. I got into
+              technology around age 17, curious about electronic money and
+              blockchain concepts, and that curiosity has stayed with me.
             </p>
 
             <p className="mt-5 text-lg leading-relaxed text-muted">
-              My journey started with curiosity and self-learning. Over the years, I've transformed 
-              ideas into functional products—from SaaS platforms to custom digital solutions.
+              Today I build web apps, mobile apps, and AI-powered features, with
+              a business eye for products that solve real problems with the
+              least complexity. I enjoy the business side of technology and
+              solving problems with easy solutions that reduce complexity and
+              create real impact.
             </p>
 
             <div className="mt-8 p-6 rounded-3xl border border-white/10 bg-white/5 relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5" />
               <Sparkles className="text-purple-400 mb-3 relative z-10" />
               <p className="italic text-muted-light relative z-10">
-                "Great software is not only about code. It's about solving problems people actually have."
+                &quot;In every part of life, always hunt for value.&quot;
               </p>
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
+            <div className="grid grid-cols-2 gap-6 mt-12">
               {stats.map((stat, i) => (
                 <motion.div
                   key={stat.label}
