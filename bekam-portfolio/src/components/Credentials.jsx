@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Download, Award, BookOpen, GraduationCap } from "lucide-react";
+import { assetPath } from "@/lib/asset-path.mjs";
 
 const certificates = [
   { title: "Ethiocoder Certificate", issuer: "Ethiocoder", year: "", file: "" },
@@ -79,7 +80,7 @@ export default function Credentials() {
                 
                 {/* TODO(Bekam): add resume.pdf to /public */}
                 <motion.a
-                  href="/resume.pdf"
+                  href={assetPath("/resume.pdf")}
                   download
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}

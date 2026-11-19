@@ -1,8 +1,10 @@
 
+import { BASE_PATH } from "./src/lib/asset-path.mjs";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
-  basePath: "/bekamb7",
+  basePath: process.env.NODE_ENV === "production" ? BASE_PATH : "",
   images: {
     unoptimized: true,
   },

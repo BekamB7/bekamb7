@@ -15,6 +15,7 @@ import {
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
+import { assetPath } from "@/lib/asset-path.mjs";
 
 const SHOW_ROLE_BADGE = false;
 
@@ -32,7 +33,6 @@ const techIcons = {
   TypeScript: SiTypescript,
 };
 
-// TODO(Bekam): add project1.png, project2.png, project3.png (recommended 1600x1000, PNG or WebP) in the folder these paths point to
 const projects = [
   {
     title: "MenuGo",
@@ -54,7 +54,7 @@ const projects = [
       "Tailwind CSS",
       "REST API",
     ],
-    image: "/project1.png",
+    image: assetPath("/project1.png"),
     live: "https://menu-go-digital-menu.vercel.app/",
     code: "https://github.com/BekamB7/MenuGo-Digital-menu/",
   },
@@ -81,7 +81,7 @@ const projects = [
       "JWT",
       "Vercel",
     ],
-    image: "/project2.png",
+    image: assetPath("/project2.png"),
     live: "https://fast-ex-three.vercel.app/",
     code: "https://github.com/BekamB7/Fast-Ex",
   },
@@ -114,7 +114,7 @@ const projects = [
       "ESLint",
       "Husky",
     ],
-    image: "/project3.png",
+    image: assetPath("/project3.png"),
     live: "https://salon.nebelbal.com/?lang=en",
     privateRepository: true,
   },

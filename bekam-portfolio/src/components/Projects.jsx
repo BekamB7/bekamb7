@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ExternalLink, Code, Folder } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
+import { assetPath } from "@/lib/asset-path.mjs";
 
 // TODO(Bekam): add more projects here later (7+ projects built so far)
 const projects = [
@@ -21,8 +22,7 @@ const projects = [
       "Tailwind CSS",
       "REST API",
     ],
-    // TODO(Bekam): add project1.png
-    image: "/project1.png",
+    image: assetPath("/project1.png"),
     live: "https://menu-go-digital-menu.vercel.app/",
     code: "https://github.com/BekamB7/MenuGo-Digital-menu/",
     featured: true,
@@ -44,8 +44,7 @@ const projects = [
       "JWT",
       "Vercel",
     ],
-    // TODO(Bekam): add project2.png
-    image: "/project2.png",
+    image: assetPath("/project2.png"),
     live: "https://fast-ex-three.vercel.app/",
     // TODO(Bekam): confirm this exact repo URL
     code: "https://github.com/BekamB7/Fast-Ex",
@@ -74,8 +73,7 @@ const projects = [
       "ESLint",
       "Husky",
     ],
-    // TODO(Bekam): add project3.png
-    image: "/project3.png",
+    image: assetPath("/project3.png"),
     live: "https://salon.nebelbal.com/?lang=en",
     privateRepository: true,
     featured: true,

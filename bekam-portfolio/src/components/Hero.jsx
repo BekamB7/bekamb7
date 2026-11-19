@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { FaGithub, FaInstagram } from "react-icons/fa";
+import { assetPath } from "@/lib/asset-path.mjs";
 
 const roles = ["Web Apps", "Mobile Apps", "UI Design", "AI Integration"];
 
@@ -65,7 +66,7 @@ export default function Hero() {
 
       <div className="pointer-events-none absolute bottom-0 right-0 z-[1] h-[55%] md:h-[65%] lg:bottom-auto lg:-top-[4%] lg:h-[104%]">
         <Image
-          src="/portfolio_background_removed.png"
+          src={assetPath("/portfolio_background_removed.png")}
           alt="Bekam Berhanu"
           width={430}
           height={580}
@@ -152,7 +153,7 @@ export default function Hero() {
 
               {/* TODO(Bekam): add resume.pdf to /public */}
               <motion.a
-                href="/resume.pdf"
+                href={assetPath("/resume.pdf")}
                 download
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}

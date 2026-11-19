@@ -1,5 +1,12 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## GitHub Pages assets
+
+The static export is deployed at `/bekamb7/`. `src/lib/asset-path.mjs`
+prefixes public asset URLs during production builds and leaves root-relative
+URLs unchanged during local development. Use `assetPath("/filename.ext")` for
+public files, including `next/image` sources and regular links.
+
 ## Getting Started
 
 First, run the development server:
