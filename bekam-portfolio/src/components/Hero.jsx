@@ -66,13 +66,15 @@ export default function Hero() {
 
       <div className="pointer-events-none absolute bottom-0 right-0 z-[1] h-[55%] md:h-[65%] lg:bottom-auto lg:-top-[4%] lg:h-[104%]">
         <Image
-          src={assetPath("/portfolio_background_removed.png")}
+          src={assetPath("/portfolio_background_removed.webp")}
           alt="Bekam Berhanu"
-          width={430}
-          height={580}
+          width={900}
+          height={1215}
           sizes="(min-width: 1024px) 54vw, (min-width: 768px) 68vw, 85vw"
           className="h-full w-auto max-w-none object-contain object-bottom"
           style={{
+            filter:
+              "brightness(1.08) contrast(1.05) drop-shadow(0 0 8px rgba(96,165,250,0.08))",
             maskImage:
               "linear-gradient(to bottom, black 80%, transparent 100%)",
             WebkitMaskImage:
@@ -80,21 +82,12 @@ export default function Hero() {
           }}
           priority
         />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(rgba(10,10,10,0.6), rgba(10,10,10,0.14)), radial-gradient(ellipse at 50% 35%, rgba(10,10,10,0) 35%, rgba(10,10,10,0.18) 70%, rgba(10,10,10,0.32) 100%)",
-          }}
-        />
       </div>
 
       {/* Content */}
       <div className="container mx-auto px-6 relative z-10 py-20">
         <div className="w-full max-w-full lg:max-w-[min(31vw,640px)] xl:max-w-[min(34vw,640px)]">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="space-y-5"
